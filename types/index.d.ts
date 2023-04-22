@@ -148,6 +148,7 @@ declare global {
 
   interface UserOrder {
     id: number;
+    uuid: string;
     side: string;
     ord_type: string;
     price: string;
@@ -409,7 +410,7 @@ declare global {
     }
 
     // eslint-disable-next-line @typescript-eslint/no-empty-interface
-    interface Expense {}
+    interface Expense { }
   }
 
   interface Deposit {
@@ -536,4 +537,4 @@ declare global {
   }
 }
 
-export {};
+export { };

@@ -60,7 +60,7 @@ export default class OrdersComponent extends Vue {
   @Prop({ default: 50 }) readonly pageSize: number;
   @Prop({ default: () => [] }) readonly disabled_columns!: string[];
 
-  orders_removed: number[] = [];
+  orders_removed: string[] = [];
 
   get columns() {
     const columns = [

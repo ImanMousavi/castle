@@ -231,7 +231,7 @@ export default class OpenOrders extends Vue {
 
   async cancel_orders(market: string) {
     try {
-      await store.dispatch(CANCEL_ORDERS, market);
+      await store.dispatch(CANCEL_ORDERS, { market });
 
       (this.$refs["modal-cancel-orders"] as any).delete();
       runNotice(

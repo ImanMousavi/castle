@@ -36,7 +36,7 @@
     </template>
     <template slot="action" slot-scope="{ item, column }">
       <span :class="`action text-${column.algin}`">
-        <span @click="cancel_order(item.id)">
+        <span @click="cancel_order(item.uuid)">
           Cancel
           <a-icon type="close-circle" />
         </span>
@@ -88,7 +88,7 @@ export default class OrdersComponent extends Vue {
   get orders() {
     return this.data
       .filter(order => {
-        return !this.orders_removed.includes(order.id);
+        return !this.orders_removed.includes(order.uuid);
       })
       .map(order => {
         order["market"] = order["market"].toUpperCase();
@@ -103,12 +103,12 @@ export default class OrdersComponent extends Vue {
     this.$emit("change-pagination", payload);
   }
 
-  async cancel_order(id: number) {
+  async cancel_order(uuid: string) {
     try {
-      await store.dispatch(CANCEL_ORDER, id);
+      await store.dispatch(CANCEL_ORDER, uuid);
 
       runNotice("success", "Order has been canceled");
-      this.orders_removed.push(id);
+      this.orders_removed.push(uuid);
     } catch (error) {
       return error;
     }

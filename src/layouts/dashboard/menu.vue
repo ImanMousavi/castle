@@ -9,7 +9,7 @@
     <div class="ant-layout-sider-logo">
       <router-link to="/dashboard/analysis">
         <img src="@/assets/img/logo.png" />
-        <h1>ZSmart Admin</h1>
+        <h4>Fortem Tech | Admin</h4>
       </router-link>
     </div>
     <a-menu
@@ -143,7 +143,7 @@ export default class MenuComponent extends Vue {
       path: "exchange",
       children: [
         {
-          name: "Currencies",
+          name: "Currencies and Tokens",
           icon: "dollar",
           path: "currencies",
           attrs: {
@@ -161,7 +161,7 @@ export default class MenuComponent extends Vue {
           }
         },
         {
-          name: "IEO",
+          name: "Tokenization",
           icon: "radar-chart",
           path: "ieo",
           attrs: {
@@ -324,7 +324,7 @@ export default class MenuComponent extends Vue {
     },
     {
       key: "bot",
-      name: "Bot",
+      name: "Rover Market Maker Bot",
       icon: "stock",
       path: "bot",
       children: [
